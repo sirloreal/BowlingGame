@@ -4,7 +4,7 @@ namespace BowlingGame
 {
     internal class StrikeFrame : Frame
     {
-        public StrikeFrame(ArrayList throws)
+        public StrikeFrame(List<int> throws)
             :base(throws)
         {
             throws.Add(10);

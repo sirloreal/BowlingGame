@@ -5,7 +5,7 @@ namespace BowlingGame
     internal class BonusFrame : Frame
     {
 
-        public BonusFrame(ArrayList throws, int firstThrow)
+        public BonusFrame(List<int> throws, int firstThrow)
             :base(throws)
         {
             throws.Add(firstThrow);

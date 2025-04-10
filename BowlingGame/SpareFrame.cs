@@ -4,7 +4,7 @@ namespace BowlingGame
 {
     internal class SpareFrame : Frame
     {
-        public SpareFrame(ArrayList throws, int firstRoll, int secondRoll)
+        public SpareFrame(List<int> throws, int firstRoll, int secondRoll)
             :base(throws)
         {
             throws.Add(firstRoll);

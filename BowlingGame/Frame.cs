@@ -4,10 +4,10 @@ namespace BowlingGame
 {
     internal abstract class Frame : IFrame
     {
-        protected ArrayList throws;
+        protected List<int> throws;
         protected int startingThrow;
 
-        public Frame(ArrayList throws)
+        public Frame(List<int> throws)
         {
             this.throws = throws;
             this.startingThrow = throws.Count;

@@ -4,12 +4,12 @@ namespace BowlingGame
 {
     public class BowlingGame
     {
-        private readonly ArrayList _throws;
-        private readonly ArrayList _frames;
+        private readonly List<int> _throws;
+        private readonly List<IFrame> _frames;
         public BowlingGame()
         {
-            _throws = new ArrayList();
-            _frames = new ArrayList();
+            _throws = new List<int>();
+            _frames = new List<IFrame>();
         }
 
         public void RollFrame(int firstRoll, int secondRoll)

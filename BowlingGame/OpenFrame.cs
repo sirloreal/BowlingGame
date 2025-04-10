@@ -4,7 +4,7 @@ namespace BowlingGame
 {
     internal class OpenFrame : Frame
     {
-        public OpenFrame(ArrayList throws, int firstRoll, int secondRoll)
+        public OpenFrame(List<int> throws, int firstRoll, int secondRoll)
             : base(throws)
         {
             throws.Add(firstRoll);
