@@ -69,6 +69,30 @@ namespace BowlingGameTests
             Assert.Equal(15, _game.Score());
         }
 
+        [Fact]
+        public void PerfectGame()
+        {
+            for (int i=0;i<10; i++)
+            {
+                _game.Strike();
+            }
+            _game.BonusRoll(10);
+            _game.BonusRoll(10);
+            Assert.Equal(300, _game.Score());
+        }
+
+        [Fact]
+        public void AlternatingStrikeSpare()
+        {
+            for(int i=0; i<5; i++)
+            {
+                _game.Strike();
+                _game.Spare(4, 6);
+            }
+            _game.BonusRoll(10);
+            Assert.Equal(200, _game.Score());
+        }
+
         private void ManyOpenFrames(int count, int firstThrow, int secondThrow)
         {
             for (int frameNumber = 0; frameNumber < count; frameNumber++)
