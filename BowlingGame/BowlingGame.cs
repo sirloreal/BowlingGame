@@ -14,12 +14,17 @@ namespace BowlingGame
 
         public void RollFrame(int firstRoll, int secondRoll)
         {
-            _frames.Add(new Frame(_throws, _throws.Count, firstRoll, secondRoll));
+            _frames.Add(new OpenFrame(_throws, firstRoll, secondRoll));
         }
 
         public void Spare(int firstThrow, int secondThrow)
         {
-            _frames.Add(new SpareFrame(_throws, _throws.Count, firstThrow, secondThrow));
+            _frames.Add(new SpareFrame(_throws, firstThrow, secondThrow));
+        }
+
+        public void Strike()
+        {
+            _frames.Add(new StrikeFrame(_throws));
         }
 
         public int Score()

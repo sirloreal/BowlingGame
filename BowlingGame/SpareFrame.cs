@@ -7,27 +7,23 @@ using System.Threading.Tasks;
 
 namespace BowlingGame
 {
-    public class SpareFrame : IFrame
+    internal class SpareFrame : Frame
     {
-        private ArrayList throws;
-        private int startingThrow;
-
-        public SpareFrame(ArrayList throws, int startingThrow, int firstRoll, int secondRoll)
+        public SpareFrame(ArrayList throws, int firstRoll, int secondRoll)
+            :base(throws)
         {
-            this.throws = throws;
-            this.startingThrow = throws.Count;
             throws.Add(firstRoll);
             throws.Add(secondRoll);
         }
 
-        private int NextRoll()
+        private int NextBall()
         {
             return (int)throws[startingThrow + 2];
         }
 
-        public int Score()
+        public override int Score()
         {
-            return 10 + NextRoll();
+            return 10 + NextBall();
         }
     }
 }

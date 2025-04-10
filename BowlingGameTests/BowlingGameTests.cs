@@ -41,6 +41,15 @@ namespace BowlingGameTests
             Assert.Equal(23, _game.Score());
         }
 
+        [Fact]
+        public void Strike()
+        {
+            _game.Strike();
+            _game.RollFrame(5, 3);
+            ManyOpenFrames(8, 0, 0);
+            Assert.Equal(26, _game.Score());
+        }
+
         private void ManyOpenFrames(int count, int firstThrow, int secondThrow)
         {
             for (int frameNumber = 0; frameNumber < count; frameNumber++)

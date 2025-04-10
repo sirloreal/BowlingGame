@@ -1,23 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace BowlingGame
 {
-    internal class Frame : IFrame
+    internal abstract class Frame : IFrame
     {
-        private ArrayList throws;
-        private int startingThrow;
+        protected ArrayList throws;
+        protected int startingThrow;
 
-        public Frame(ArrayList throws, int startingThrow, int firstRoll, int secondRoll)
+        public Frame(ArrayList throws)
         {
             this.throws = throws;
             this.startingThrow = throws.Count;
-            throws.Add(firstRoll);
-            throws.Add(secondRoll);
         }
+        abstract public int Score();
 
-        public int Score()
-        {
-            return (int)throws[startingThrow] + (int)throws[startingThrow+1];
-        }
     }
 }
