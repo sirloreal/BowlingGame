@@ -15,10 +15,15 @@ namespace BowlingGame
             _frames.Add(new Frame(firstRoll, secondRoll));
         }
 
+        public void Spare(int firstThrow, int secondThrow)
+        {
+            _frames.Add(new SpareFrame(firstThrow, secondThrow));
+        }
+
         public int Score()
         {
             int total = 0;
-            foreach (Frame frame in _frames)
+            foreach (IFrame frame in _frames)
             {
                 total += frame.Score();
             }

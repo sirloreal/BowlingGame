@@ -1,6 +1,6 @@
 ﻿namespace BowlingGame
 {
-    internal class Frame
+    internal class Frame : IFrame
     {
         private int firstRoll;
         private int secondRoll;
