@@ -9,7 +9,6 @@ namespace BowlingGame
 {
     internal class StrikeFrame : Frame
     {
-
         public StrikeFrame(ArrayList throws)
             :base(throws)
         {

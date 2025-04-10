@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Security.Cryptography;
 
 namespace BowlingGame
 {
@@ -25,6 +26,11 @@ namespace BowlingGame
         public void Strike()
         {
             _frames.Add(new StrikeFrame(_throws));
+        }
+
+        public void BonusRoll(int firstThrow)
+        {
+            _frames.Add(new BonusFrame(_throws, firstThrow));
         }
 
         public int Score()
