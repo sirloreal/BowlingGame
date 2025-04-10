@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,21 +9,25 @@ namespace BowlingGame
 {
     public class SpareFrame : IFrame
     {
-        private int score;
+        private ArrayList throws;
+        private int startingThrow;
 
-        public SpareFrame(int firstRoll, int secondRoll)
+        public SpareFrame(ArrayList throws, int startingThrow, int firstRoll, int secondRoll)
         {
-            score = 10 + NextRoll();
+            this.throws = throws;
+            this.startingThrow = throws.Count;
+            throws.Add(firstRoll);
+            throws.Add(secondRoll);
         }
 
         private int NextRoll()
         {
-            return 3;
+            return (int)throws[startingThrow + 2];
         }
 
         public int Score()
         {
-            return score;
+            return 10 + NextRoll();
         }
     }
 }

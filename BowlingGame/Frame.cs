@@ -1,19 +1,25 @@
-﻿namespace BowlingGame
+﻿using System.Collections;
+
+namespace BowlingGame
 {
     internal class Frame : IFrame
     {
-        private int firstRoll;
-        private int secondRoll;
+        private ArrayList throws;
+        private int score;
+        private int startingThrow;
 
-        public Frame(int firstRoll, int secondRoll)
+        public Frame(ArrayList throws, int startingThrow, int firstRoll, int secondRoll)
         {
-            this.firstRoll = firstRoll;
-            this.secondRoll = secondRoll;
+            this.throws = throws;
+            this.startingThrow = throws.Count;
+            throws.Add(firstRoll);
+            throws.Add(secondRoll);
+            this.score = firstRoll + secondRoll;
         }
 
         public int Score()
         {
-            return firstRoll + secondRoll;
+            return score;
         }
     }
 }
