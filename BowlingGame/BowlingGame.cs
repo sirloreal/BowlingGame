@@ -4,24 +4,23 @@ namespace BowlingGame
 {
     public class BowlingGame
     {
-        private readonly ArrayList _rolls;
+        private readonly ArrayList _frames;
         public BowlingGame()
         {
-            _rolls = new ArrayList();
+            _frames = new ArrayList();
         }
 
         public void RollFrame(int firstRoll, int secondRoll)
         {
-            _rolls.Add(firstRoll);
-            _rolls.Add(secondRoll);
+            _frames.Add(new Frame(firstRoll, secondRoll));
         }
 
         public int Score()
         {
             int total = 0;
-            foreach (int score in _rolls)
+            foreach (Frame frame in _frames)
             {
-                total += score;
+                total += frame.Score();
             }
             return total;
         }
